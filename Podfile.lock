@@ -1,0 +1,44 @@
+PODS:
+  - AAInfographics (2.0.4)
+  - CocoaAsyncSocket (7.3.5)
+  - DateToolsSwift (4.0.0)
+  - Parchment (1.5.0)
+  - PKJSONSocket (0.0.2):
+    - CocoaAsyncSocket (~> 7.3.2)
+
+DEPENDENCIES:
+  - "AAInfographics (from `git@github.com:AAChartModel/AAChartKit-Swift.git`)"
+  - DateToolsSwift
+  - Parchment
+  - "PKJSONSocket (from `git@github.com:pkluz/PKJSONSocket.git`)"
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CocoaAsyncSocket
+    - DateToolsSwift
+    - Parchment
+
+EXTERNAL SOURCES:
+  AAInfographics:
+    :git: "git@github.com:AAChartModel/AAChartKit-Swift.git"
+  PKJSONSocket:
+    :git: "git@github.com:pkluz/PKJSONSocket.git"
+
+CHECKOUT OPTIONS:
+  AAInfographics:
+    :commit: 0455c20d702dfaf26e71d409d393c955bcce83f7
+    :git: "git@github.com:AAChartModel/AAChartKit-Swift.git"
+  PKJSONSocket:
+    :commit: 351c5bd18a5a384cb02045f8998bec3a5b43e7ed
+    :git: "git@github.com:pkluz/PKJSONSocket.git"
+
+SPEC CHECKSUMS:
+  AAInfographics: 10f87e06fc007a0adbb05de020e4a2fe3119f8de
+  CocoaAsyncSocket: 94c582a5bef4bb0f51b6ebf3e1b561d9091a68ba
+  DateToolsSwift: 875d97ff9e3a5d54abdd67a269b3f51c757b71ab
+  Parchment: 5a8c9c73549a6d73a7c1b606c27246910d2e5720
+  PKJSONSocket: 2e8d2d04bf01f2948e50cb92c13e581ce25b22b8
+
+PODFILE CHECKSUM: a970918e6a16f2ede146a3af8fb7be1d965cb7f0
+
+COCOAPODS: 1.6.1

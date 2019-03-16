@@ -1,0 +1,6 @@
+framework module PKJSONSocket {
+  umbrella header "PKJSONSocket-umbrella.h"
+
+  export *
+  module * { export * }
+}
