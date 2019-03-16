@@ -1,5 +1,7 @@
 # Wearvelop
 
+![Screenshot](./Screenshot.png)
+
 ## Installation
 
 Wearvelop uses CocoaPods for dependency management. Dependencies are checked into the repository, so no extra work is required.
