@@ -6,7 +6,7 @@
 //  Copyright © 2018 Philip Kluz. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /// Value is effectively what constitutes the Wearvelop typesystem.
 public indirect enum Value {
@@ -143,6 +143,24 @@ public indirect enum Value {
             return nil
         }
     }
+    
+    public func unwrapAsMap() -> Dictionary<String, Value>? {
+        switch self {
+        case .map(let value):
+            return value
+        default:
+            return nil
+        }
+    }
+    
+    public func unwrapAsBool() -> Bool? {
+        switch self {
+        case .bool(let value):
+            return value
+        default:
+            return nil
+        }
+    }
 }
 
 extension Value: Equatable {
@@ -224,11 +242,11 @@ public protocol ValueConvertible {
 }
 
 extension String: ValueConvertible {
-
+    
     public func toValue() -> Value {
         return .string(self)
     }
-
+    
     // Attempts to cast a string to a typed value of a different (more specific) kind.
     public func toCastValue() -> Value {
         switch trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) {
@@ -337,6 +355,20 @@ extension Int: ValueConvertible {
 extension Bool: ValueConvertible {
     public func toValue() -> Value {
         return .bool(self)
+    }
+}
+
+extension UIView: ValueConvertible {
+    
+    public func toValue() -> Value {
+        let backgroundColor = Color(systemColor: self.backgroundColor ?? .white)?.toHex() ?? ""
+        return .map([
+            UIViewValue.Keys.x.rawValue: .double(Double(frame.origin.x)),
+            UIViewValue.Keys.y.rawValue: .double(Double(frame.origin.y)),
+            UIViewValue.Keys.width.rawValue: .double(Double(frame.size.width)),
+            UIViewValue.Keys.height.rawValue: .double(Double(frame.size.height)),
+            UIViewValue.Keys.backgroundColor.rawValue: .string(backgroundColor)
+            ])
     }
 }
 

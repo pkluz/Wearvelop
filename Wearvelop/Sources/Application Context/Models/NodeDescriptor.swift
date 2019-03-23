@@ -37,6 +37,9 @@ public enum NodeDescriptor: CaseIterable {
     case timer
     case zip
     case print
+    case renderContext
+    case view
+    case switchView
     
     public var title: String {
         switch self {
@@ -96,6 +99,12 @@ public enum NodeDescriptor: CaseIterable {
             return "Print"
         case .zip:
             return "Zip"
+        case .renderContext:
+            return "Render Context"
+        case .view:
+            return "UIView"
+        case .switchView:
+            return "UISwitch"
         }
     }
     
@@ -157,6 +166,12 @@ public enum NodeDescriptor: CaseIterable {
             return "Prints the incoming values on-screen."
         case .zip:
             return "Combines all the most recent outputs of all inputs into a single array. A new value is only generated once each input delivers a value."
+        case .renderContext:
+            return "Creates a renderable context node. Allows for arbitrary drawing within the context."
+        case .view:
+            return "Creates a basic UIView node."
+        case .switchView:
+            return "Creates a basic UISwitch node."
         }
     }
     
@@ -223,6 +238,12 @@ public enum NodeDescriptor: CaseIterable {
             return PrintDisplayNode(value: value)
         case .zip:
             return DisplayNode(node: ZipNode(inputs: 2))
+        case .renderContext:
+            return RenderContextDisplayNode()
+        case .view:
+            return UIViewDisplayNode(x: 0.0, y: 0.0, width: 100.0, height: 50.0)
+        case .switchView:
+            return UISwitchDisplayNode(x: 0.0, y: 0.0, isOn: false)
         }
     }
 }
