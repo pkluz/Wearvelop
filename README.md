@@ -28,7 +28,7 @@ Wearvelop/
 |   ├── Application Context/         // Application Layer Code
 |   ├── Display Context/             // Render Layer Code
 |   ├── Node Context/                // Logic Layer Code
-|   └── Utilities/                   // Various Extension and Helpers.
+|   └── Utilities/                   // Various Extension and Helpers
 ├── Supporting/                      // Auxiliary Files
 |   └── Info.plist
 └── Vendor/                          // Third Party Dependencies (Directly Included)
